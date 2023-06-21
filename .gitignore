@@ -73,3 +73,6 @@ crashlytics-build.properties
 
 # Oculus package
 /[Aa]ssets/[Oo]culus/*
+
+# Unity packages
+/[Aa]ssets/UnityAssetStore/*
