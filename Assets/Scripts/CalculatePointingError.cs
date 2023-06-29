@@ -1,16 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Oculus.Interaction;
 
 public class CalculatePointingError : MonoBehaviour
 {
     
     public bool isStart;
     public List<GameObject> targetList;
-
+    public GameObject _leftController;
+    public GameObject hmd;
+    public Vector3 head2Object;
+    public Vector3 pointingVec;
+    
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -28,6 +33,16 @@ public class CalculatePointingError : MonoBehaviour
 
             
         }
+
+        // write a helper fucntion, double check it is correct.
+        head2Object = (targetList[0].transform.position - hmd.transform.position);
+        head2Object = Vector3.ProjectOnPlane(head2Object, Vector3.up);
+        Debug.DrawRay(hmd.transform.position, head2Object, Color.red, 0.1f);
+
+        pointingVec = Vector3.ProjectOnPlane(_leftController.transform.forward, Vector3.up);
+        Debug.DrawRay(_leftController.transform.position, pointingVec, Color.green, 0.1f);
+
+        Debug.Log(Vector3.Angle(head2Object, pointingVec));
         
     }
     
