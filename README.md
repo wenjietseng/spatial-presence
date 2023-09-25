@@ -18,3 +18,4 @@ Unity asset store:
 - Oculus XR Plugin 4.0.0
 - XR Plugin Management 4.4.0
 - Windows Oculus App Version 54.0.0.110.284 (54.0.0.110.284)
+- Apartment Kit by Brick Project Studio
